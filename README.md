@@ -22,3 +22,12 @@ Most people majoring in computer science can agree that they can barely take car
 * **Authentication** - Register and login users. Credentials stored in database. Can't customize character without authentication.
 * **Data Storage** - Stores users, user customization choices, and money earned.
 * **WebSocket** - When each user changes/saves their customizations, their new character is broadcasted to all other users.
+
+## HTML Deliverable
+* **HTML pages** - Four HTML page that represent the ability to login, care for your character, play a game, and view other characters.
+* **Links** - The login page automatically links to the character page.
+* **Text** - Each of the pictures in the gallery is paired with a text of who made the picture. Each contains text describing what can be done.
+* **Images** - On the character page, I included images of a character and what you can use to take care of her.
+* **Login** - Input box and submit button for login.
+* **Database** - The gallery and character design and current well-being represents data pulled from the database.
+* **WebSocket** - The gallery represents realtime character designs.

@@ -77,7 +77,7 @@ Midterm study guide
   * ![image](https://github.com/soph1e-mart1n/startup/assets/112999477/efed8fa9-63f4-4219-ad1a-2d5c4984f808)
 
 * What is the opening HTML tag for a paragraph, ordered list, unordered list, second level heading, first level heading, third level heading?
-  * "<p>, <ol>, <ul>, <h1>, <h2>, <h3>"
+  * ![image](https://github.com/soph1e-mart1n/startup/assets/112999477/ddc10abc-cc31-469d-bc6c-f4f77171b08d)
 * How do you declare the document type to be html?
   * A doctype declaration tells the browser that the page to be rendered is written in HTML. To declare an HTML5 doctype, `<! DOCTYPE html>` is required in the first line of your HTML document. Doctype declaration for HTML5 is not case sensitive and does not require a closing tag.
 * What is valid javascript syntax for if, **else**, for, while, switch statements?

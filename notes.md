@@ -19,7 +19,9 @@ Midterm study guide
   * A period ( . ) indicates a class, and a hash ( # ) indicates an ID. The fundamental difference between is that you can reuse a class on your page over and over, whereas an ID can be used once
 * In the following code, what is the difference between padding and margin?
   * In CSS, a margin is the space around an element's border, while padding is the space between an element's border and the element's content. Put another way, the margin property controls the space outside an element, and the padding property controls the space inside an element.
-  * ![padding vs margin]([http://url/to/img.png](https://www.learningaboutelectronics.com/images/padding-and-margin.png))
+    
+  * ![image](https://github.com/soph1e-mart1n/startup/assets/112999477/8629839b-8937-4dba-bbc1-85006ffebb93)
+    
 * Given this HTML and this CSS how will the images be displayed using flex?
   * The Flexible Box Layout Module, makes it easier to design flexible responsive layout structure without using float or positioning.
 * What does the following padding CSS do?

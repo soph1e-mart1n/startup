@@ -94,20 +94,50 @@ Midterm study guide
   * ![image](https://github.com/soph1e-mart1n/startup/assets/112999477/78b2a4c4-871e-407d-9dec-9d77dc7c5b3c)
 
 * Which of the following correctly describes JSON?
-  * 
+  * JSON stands for JavaScript Object Notation
+  * JSON is a lightweight format for storing and transporting data
+  * JSON is often used when data is sent from a server to a web page
+  * JSON is "self-describing" and easy to understand
+
+  * ![image](https://github.com/soph1e-mart1n/startup/assets/112999477/4b20a74b-7c0d-4012-9a75-2048123a05f7)
+   
 * What does the console command chmod, pwd, cd, ls, vim, nano, mkdir, mv, rm, man, ssh, ps, wget, sudo  do?
-  * 
+
+  * chmod - changes access permissions
+  * pwd - displays the path name of the working directory
+  * cd - changes the current diractory
+  * ls - displays content of directory
+  * vim - Vim is an editor to create or edit a text file
+  * nano - small and friendly text editor
+  * mkdir - create one or more directories specified by the Directory parameter
+  * mv - move file
+  * rm - delete file
+  * man - Displays manual entries online.
+  * ssh - SSH enables secure logins to remote computers
+  * ps - shows status of processes
+  * wget - Wget is a free GNU command-line utility tool used to download files from the internet
+  * sudo - Sudo stands for either "substitute user do" or "super user do" and it allows you to temporarily elevate your current user account to have root privileges
+
 * Which of the following console command creates a remote shell session?
-  * 
+  * ssh
 * Which of the following is true when the -la parameter is specified for the ls console command?
-  * 
+  * Displays the mode, number of links, owner, group, size (in bytes), and time of last modification for each file. If the file is a special file, the size field contains the major and minor device numbers. If the time of last modification is greater than six months ago, the time field is shown in the format month date year where as files modified within six months the time field is shown as month date time format.
+  * Lists all entries in the directory
 * Which of the following is true for the domain name banana.fruit.bozo.click, which is the top level domain, which is a subdomain, which is a root domain?
-  * 
+  * For example, if you currently own myblog.wordpress.com, the “myblog” section would be a subdomain, the “wordpress” section would be the second-level domain (SLD) and the “.com” would be the top-level domain (TLD)
+  * ![image](https://github.com/soph1e-mart1n/startup/assets/112999477/ce2d3b76-8686-40d5-a581-2a8d7af32546)
+  * ![image](https://github.com/soph1e-mart1n/startup/assets/112999477/ad11f232-b06e-4d96-a1bc-f35fb9084986)
+  * ![image](https://github.com/soph1e-mart1n/startup/assets/112999477/96aa4c46-6a66-4fac-ba50-f9a0d1cf0179)
 * Is a web certificate is necessary to use HTTPS.
-  * 
+  * Yes, https requires a SSL certificate
 * Can a DNS A record can point to an IP address or another A record.
-  * 
+  * A DNS A record is the most fundamental type of DNS record. The A stands for “Address,” and it's used to point a domain name to an IP address or host. You can only use an A record when you want to point to an IPv4 address
+  * The DNS A record points to the IP address for a given domain name
 * Port 443, 80, 22 is reserved for which protocol?
-  * 
+  * Port 443 is a virtual point ⁠through which data transmissions are sent and received
+  *  Port 80 is the port number assigned to commonly used internet communication protocol, Hypertext Transfer Protocol (HTTP)
+  *  Port 22 is a well-known port number used in computer networking. It is specifically associated with the Secure Shell (SSH) protocol, which is commonly used for secure remote administration and secure file transfer over an unsecured network
 * What will the following code using Promises output when executed?
-  * 
+  * A JavaScript Promise object contains both the producing code and calls to the consuming code
+  * ![image](https://github.com/soph1e-mart1n/startup/assets/112999477/442e9da2-d7f1-4948-8ae2-71688a6f6418)
+

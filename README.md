@@ -41,3 +41,12 @@ For this deliverable I properly styled the application into an organized appeara
 * **Application elements** - Used colors that go with the theme of my webapp
 * **Application text content** - Consistent fonts that were alligned properly
 * **Application images** - Made images centered to text or screen
+
+* ## JavaScript deliverable
+
+For this deliverable I implemented by JavaScript so that the application works for a single user. I also added placeholders for future technology.
+
+- **Login** - When you press the login button it takes you to the customization page.
+- **Database** - Displayed the clothes the user has. Currently this is stored and retrieved from local storage, but it will be replaced with the database data later.
+- **WebSocket** - I used random pictures in the gallety. This will be replaced with WebSocket images later.
+- **Application logic** - The user can interact with difference parts of the website, including the memory game and the dress-up page.

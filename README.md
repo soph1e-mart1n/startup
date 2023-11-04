@@ -31,3 +31,13 @@ Most people majoring in computer science can agree that they can barely take car
 * **Login** - Input box and submit button for login.
 * **Database** - The gallery and character design and current well-being represents data pulled from the database.
 * **WebSocket** - The gallery represents realtime character designs.
+
+## CSS Deliverable
+For this deliverable I properly styled the application into an organized appearance.
+
+* **Header, footer, and main content body**
+* **Navigation elements** - I deleted the underlines and changed the color
+* **Responsive to window resizing** - My app changes layout for all window sizes and devices
+* **Application elements** - Used colors that go with the theme of my webapp
+* **Application text content** - Consistent fonts that were alligned properly
+* **Application images** - Made images centered to text or screen

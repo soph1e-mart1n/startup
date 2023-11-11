@@ -10,36 +10,84 @@
 //functionality for resetting the canvas and randomizing outfits.
 
 //stores figure and clothing image links
-var croquisLink = "https://res.cloudinary.com/elizapratt/image/upload/v1555963369/smol_croquis_qafecy.png";
+var skinsLinks = ["https://github.com/soph1e-mart1n/startup/blob/main/public/assets/Fem1.png?raw=true",
+    "https://github.com/soph1e-mart1n/startup/blob/main/public/assets/Fem2.png?raw=true",
+    "https://github.com/soph1e-mart1n/startup/blob/main/public/assets/Fem3.png?raw=true",
+    "https://github.com/soph1e-mart1n/startup/blob/main/public/assets/Fem4.png?raw=true",
+    "https://github.com/soph1e-mart1n/startup/blob/main/public/assets/Fem5.png?raw=true"
+];
 
-var hairLinks = ["https://res.cloudinary.com/elizapratt/image/upload/v1555963368/curly_ytm5c2.png", 
-                 "https://res.cloudinary.com/elizapratt/image/upload/v1555963368/afro_lzikc1.png", 
-                 "https://res.cloudinary.com/elizapratt/image/upload/v1555963368/bob_e2wmut.png", 
-                 "https://res.cloudinary.com/elizapratt/image/upload/v1555963368/straight_fgfzn4.png", 
-                ];
+var hairLinks = [["https://github.com/soph1e-mart1n/startup/blob/main/public/assets/Hair1Blonde.png?raw=true",
+    "https://github.com/soph1e-mart1n/startup/blob/main/public/assets/Hair2Blonde.png?raw=true",
+    "https://github.com/soph1e-mart1n/startup/blob/main/public/assets/Hair3Blonde.png?raw=true",
+    "https://github.com/soph1e-mart1n/startup/blob/main/public/assets/Hair4Blonde.png?raw=true",
+    "https://github.com/soph1e-mart1n/startup/blob/main/public/assets/Hair5Blonde.png?raw=true"],
+["https://github.com/soph1e-mart1n/startup/blob/main/public/assets/Hair1Blue.png?raw=true",
+    "https://github.com/soph1e-mart1n/startup/blob/main/public/assets/Hair2Blue.png?raw=true",
+    "https://github.com/soph1e-mart1n/startup/blob/main/public/assets/Hair3Blue.png?raw=true",
+    "https://github.com/soph1e-mart1n/startup/blob/main/public/assets/Hair4Blue.png?raw=true",
+    "https://github.com/soph1e-mart1n/startup/blob/main/public/assets/Hair5Blue.png?raw=true"],
+["https://github.com/soph1e-mart1n/startup/blob/main/public/assets/Hair1Brown.png?raw=true",
+    "https://github.com/soph1e-mart1n/startup/blob/main/public/assets/Hair2Brown.png?raw=true",
+    "https://github.com/soph1e-mart1n/startup/blob/main/public/assets/Hair3Brown.png?raw=true",
+    "https://github.com/soph1e-mart1n/startup/blob/main/public/assets/Hair4Brown.png?raw=true",
+    "https://github.com/soph1e-mart1n/startup/blob/main/public/assets/Hair5Brown.png?raw=true"],
+["https://github.com/soph1e-mart1n/startup/blob/main/public/assets/Hair1DarkBrown.png?raw=true",
+    "https://github.com/soph1e-mart1n/startup/blob/main/public/assets/Hair2DarkBrown.png?raw=true",
+    "https://github.com/soph1e-mart1n/startup/blob/main/public/assets/Hair3DarkBrown.png?raw=true",
+    "https://github.com/soph1e-mart1n/startup/blob/main/public/assets/Hair4DarkBrown.png?raw=true",
+    "https://github.com/soph1e-mart1n/startup/blob/main/public/assets/Hair5DarkBrown.png?raw=true"],
+["https://github.com/soph1e-mart1n/startup/blob/main/public/assets/Hair1LightBrown.png?raw=true",
+    "https://github.com/soph1e-mart1n/startup/blob/main/public/assets/Hair2LightBrown.png?raw=true",
+    "https://github.com/soph1e-mart1n/startup/blob/main/public/assets/Hair3LightBrown.png?raw=true",
+    "https://github.com/soph1e-mart1n/startup/blob/main/public/assets/Hair4LightBrown.png?raw=true",
+    "https://github.com/soph1e-mart1n/startup/blob/main/public/assets/Hair5LightBrown.png?raw=true"],
+["https://github.com/soph1e-mart1n/startup/blob/main/public/assets/Hair1Red.png?raw=true",
+    "https://github.com/soph1e-mart1n/startup/blob/main/public/assets/Hair2Red.png?raw=true",
+    "https://github.com/soph1e-mart1n/startup/blob/main/public/assets/Hair3Red.png?raw=true",
+    "https://github.com/soph1e-mart1n/startup/blob/main/public/assets/Hair4Red.png?raw=true",
+    "https://github.com/soph1e-mart1n/startup/blob/main/public/assets/Hair5Red.png?raw=true"]
+];
 
-var shirtLinks = ["https://res.cloudinary.com/elizapratt/image/upload/v1555963368/Asset_7_qnzkue.png", 
-                 "https://res.cloudinary.com/elizapratt/image/upload/v1555963368/Asset_6_hz81hn.png", 
-                 "https://res.cloudinary.com/elizapratt/image/upload/v1555963368/Asset_8_wl44bj.png", 
-                 "https://res.cloudinary.com/elizapratt/image/upload/v1555963368/Asset_9_fy1sq9.png"
-                ];
+var shirtLinks = ["https://github.com/soph1e-mart1n/startup/blob/main/public/assets/BYUSweatShirt.png?raw=true",
+    "https://github.com/soph1e-mart1n/startup/blob/main/public/assets/ComputerScienceShirt.png?raw=true",
+    "https://github.com/soph1e-mart1n/startup/blob/main/public/assets/GreenStripeShirt.png?raw=true",
+    "https://github.com/soph1e-mart1n/startup/blob/main/public/assets/Overalls.png?raw=true",
+    "https://github.com/soph1e-mart1n/startup/blob/main/public/assets/PinkShirt.png?raw=true",
+    "https://github.com/soph1e-mart1n/startup/blob/main/public/assets/PinkShirt2.png?raw=true",
+    "https://github.com/soph1e-mart1n/startup/blob/main/public/assets/SkullShirt.png?raw=true",
+    "https://github.com/soph1e-mart1n/startup/blob/main/public/assets/TurtleNeck.png?raw=true",
+    "https://github.com/soph1e-mart1n/startup/blob/main/public/assets/WhiteShirt.png?raw=true"
+];
 
-var pantsLinks = ["https://res.cloudinary.com/elizapratt/image/upload/v1555963368/Asset_4_sytndg.png", 
-                 "https://res.cloudinary.com/elizapratt/image/upload/v1555963368/Asset_5_kyvfhk.png", 
-                  "https://res.cloudinary.com/elizapratt/image/upload/v1555964050/Asset_3_d0mi3l.png",
-                  "https://res.cloudinary.com/elizapratt/image/upload/v1555963368/Asset_15_vesumu.png"
-                ];
+var pantsLinks = ["https://github.com/soph1e-mart1n/startup/blob/main/public/assets/DarkBluePants.png?raw=true",
+    "https://github.com/soph1e-mart1n/startup/blob/main/public/assets/GreenShorts.png?raw=true",
+    "https://github.com/soph1e-mart1n/startup/blob/main/public/assets/Jeans.png?raw=true",
+    "https://github.com/soph1e-mart1n/startup/blob/main/public/assets/LightBluePants.png?raw=true",
+    "https://github.com/soph1e-mart1n/startup/blob/main/public/assets/PurpleSkirt.png?raw=true",
+    "https://github.com/soph1e-mart1n/startup/blob/main/public/assets/ShortSkirt.png?raw=true"
+];
 
-var shoesLinks = ["https://res.cloudinary.com/elizapratt/image/upload/v1555963368/Asset_16_vm9f3w.png", 
-                 "https://res.cloudinary.com/elizapratt/image/upload/v1555963368/Asset_13_u98geh.png", 
-                 "https://res.cloudinary.com/elizapratt/image/upload/v1555963368/Asset_10_pcbfpa.png", 
-                 "https://res.cloudinary.com/elizapratt/image/upload/v1555963368/Asset_11_hnbyfj.png"
-                ];
+var shoesLinks = ["https://github.com/soph1e-mart1n/startup/blob/main/public/assets/BlackShoes.png?raw=true",
+    "https://github.com/soph1e-mart1n/startup/blob/main/public/assets/Boots.png?raw=true",
+    "https://github.com/soph1e-mart1n/startup/blob/main/public/assets/Converse.png?raw=true",
+    "https://github.com/soph1e-mart1n/startup/blob/main/public/assets/RedShoes.png?raw=true",
+    "https://github.com/soph1e-mart1n/startup/blob/main/public/assets/Socks.png?raw=true",
+    "https://github.com/soph1e-mart1n/startup/blob/main/public/assets/YellowShoes.png?raw=true"
+];
+
+//Index that references hair color
+/*var blonde = 0;
+var blue = 1;
+var brown = 2;
+var darkBrown = 3;
+var lightBrown = 4;
+var red = 5;*/
 
 //loads images for figure and clothing
-var croquis;
+var skins = [];
 var hair = [];
-var shirt = [];
+var shirts = [];
 var pants = [];
 var shoes = [];
 
@@ -55,8 +103,6 @@ var shirtCenter = 224;
 var pantsCenter = 389;
 var shoesCenter = 544;
 
-//stores colors for clothing
-var wheel = ["white", "red", "turquoise", "green"];
 //image link for color wheel
 var colorLink = "https://upload.wikimedia.org/wikipedia/commons/d/dc/Eight-colour-wheel-2D.png";
 //stores color wheel image
@@ -73,9 +119,10 @@ var randomY = 580;
 var infoX = 560;
 var infoY = 580;
 
-//counters for changing hair style and clothing color
+//counters for changing hair style, hair color, and skin color
 var hairClick = 0;
-var colorClick = 0;
+var skinClick = 0;
+var hairColorClick = 0;
 
 //reset and random button color
 var buttonColor = 255;
@@ -92,14 +139,28 @@ var showInfo = false;
 
 //loads images into variables and arrays
 function preload() {
-    croquis = loadImage(croquisLink);
+
     colorWheel = loadImage(colorLink);
+    for (var i = 0; i < skinsLinks.length; i++) {
+        skins[i] = loadImage(skinsLinks[i]);
+    }
     for (var i = 0; i < hairLinks.length; i++) {
-        hair[i] = loadImage(hairLinks[i]);
-        shirt[i] = loadImage(shirtLinks[i]);
+        hair[i] = [];
+        for(var j = 0; j < hairLinks[i].length; j++)
+        {
+            hair[i][j] = loadImage(hairLinks[i][j]);
+        }
+    }
+    for (var i = 0; i < shirtLinks.length; i++) {
+        shirts[i] = loadImage(shirtLinks[i]);
+    }
+    for (var i = 0; i < pantsLinks.length; i++) {
         pants[i] = loadImage(pantsLinks[i]);
+    }
+    for (var i = 0; i < shoesLinks.length; i++) {
         shoes[i] = loadImage(shoesLinks[i]);
     }
+
 }
 
 
@@ -114,13 +175,19 @@ function setup() {
 //serves as a reset function when mix() and reset() are called
 function clothesSetup() {
     hairClick = 0;
-    for (var i = 0; i < 4; i++) {
-        blouse[i] = makeItem(shirt[i], width * 0.48 + 81 * i, 
-                             height * 0.15 + 20 * i, shirtCenter);
-        bottom[i] = makeItem(pants[i], width * 0.49 + 77 * i, 
-                             height * 0.55 + 10 * i, pantsCenter);
-        feet[i] = makeItem(shoes[i], width * 0.49 + 77 * i, 
-                             height * 0.85 + 5 * i, shoesCenter);
+    skinClick = 0;
+    hairColorClick = 0;
+    for (var i = 0; i < shirts.length; i++) {
+        blouse[i] = makeItem(shirts[i], width * 0.48 + 81 * i,
+            height * 0.15 + 20 * i, shirtCenter);
+    }
+    for (var i = 0; i < pants.length; i++) {
+        bottom[i] = makeItem(pants[i], width * 0.49 + 77 * i,
+            height * 0.55 + 10 * i, pantsCenter);
+    }
+    for (var i = 0; i < shoes.length; i++) {
+        feet[i] = makeItem(shoes[i], width * 0.49 + 77 * i,
+            height * 0.85 + 5 * i, shoesCenter);
     }
 }
 
@@ -131,22 +198,22 @@ function draw() {
     imageMode(CENTER);
 
     //displays figure
-    image(croquis, bodyCenter, height / 2, 225, 600);
+    image(skins[skinClick % skins.length], bodyCenter, height / 2, 225, 600);
 
     //displays clothing
-    for (var i = 0; i < shirt.length; i++) {
+    for (var i = 0; i < shirts.length; i++) {
         //draws current hair style
-        image(hair[hairClick % 4], bodyCenter, headCenterY);
+        image(hair[hairColorClick % hair.length][hairClick % hair[0].length], bodyCenter, headCenterY);
         //draws all pants, shirts and shoes
         bottom[i].draw();
         blouse[i].draw();
         feet[i].draw();
 
-        //if shirt is on the body, store index and make color wheel appear
+        /*/if shirt is on the body, store index and make color wheel appear
         if (blouse[i].x == bodyCenter) {
-            drawWheel();
-            wearing = i;
-        }
+            //drawWheel();
+            wearingShirt = i;
+        }*/
     }
 
     //calls function to fit clothing on the figure
@@ -176,7 +243,10 @@ function mousePressed() {
     var dHair = dist(mouseX, mouseY, bodyCenter, headCenterY);
 
     //if hair is clicked, increase counter to display different style
-    if (dHair < 60) hairClick++;
+    if (dHair < 60){
+        hairClick++;
+        drawWheel();
+    } 
 
     //--------------------------------------------------------------
 
@@ -185,7 +255,7 @@ function mousePressed() {
 
     //SHIRT---------------------------------------------
     //cycle through shirt positions
-    for (var i = 0; i < blouse.length; i++) { 
+    for (var i = 0; i < blouse.length; i++) {
         var dBlouse = dist(mouseX, mouseY, blouse[i].x, blouse[i].y);
         //if shirt is clicked, store the array and index
         if (dBlouse < 75) {
@@ -197,7 +267,7 @@ function mousePressed() {
 
     //PANTS-------------------------------------------
     //cycle through pants positions
-    for (var i = 0; i < bottom.length; i++) { 
+    for (var i = 0; i < bottom.length; i++) {
         var dBottomX = abs(mouseX - bottom[i].x);
         var dBottomY = abs(mouseY - bottom[i].y);
         //if pants are clicked, store the array and index
@@ -210,7 +280,7 @@ function mousePressed() {
 
     //SHOES-------------------------------------------
     //cycle through shoes positions
-    for (var i = 0; i < feet.length; i++) { 
+    for (var i = 0; i < feet.length; i++) {
         var dFeetX = abs(mouseX - feet[i].x);
         var dFeetY = abs(mouseY - feet[i].y);
         //if shoes is clicked, store the array and index
@@ -222,14 +292,14 @@ function mousePressed() {
     }
 
     //if an item is selected, display it on top of other items
-    if (click) bringToFront(selection, index);  
+    if (click) bringToFront(selection, index);
     //---------------------------------------------------------------
 
     //RECOLORING-----------------------------------------
     //distance from mouse to button
     var dTint = dist(mouseX, mouseY, wheelX, wheelY);
     //if button is clicked, recolor item
-    if (dTint < 20) recolor(3);
+    if (dTint < 20) hairColorClick++;
 
     //RANDOM OUTFIT--------------------------------------
     //distance from mouse to button
@@ -254,7 +324,7 @@ function mousePressed() {
 //Reordering the array allows item to displayed "on top"
 function bringToFront(item, index) {
     item.push(item[index]);
-    item.splice(index, 1);   
+    item.splice(index, 1);
 }
 
 
@@ -273,7 +343,7 @@ function mouseDragged() {
     if (dBlouse < 80 && !dragBottom && !dragFeet) {
         dragItem(blouse, 30);
     }
-        // if only shoes are selected, allow them to be dragged
+    // if only shoes are selected, allow them to be dragged
     else if (dFeetX < 60 && dFeetY < 50 && !dragBottom) {
         dragFeet = true;
         dragItem(feet, 0);
@@ -298,7 +368,7 @@ function snap(item) {
     //measures distance from item to target position
     var dx = bodyCenter - item[3].x;
     var dy = item[3].center - item[3].y;
-    var D = sqrt(dx*dx + dy*dy);
+    var D = sqrt(dx * dx + dy * dy);
 
     //when an item is near its target and the mouse is released,
     //snap it into position with a smooth motion
@@ -355,30 +425,32 @@ function drawWheel() {
     noFill();
     stroke(0);
     strokeWeight(2);
-    ellipse(wheelX, wheelY, 37, 37); 
+    ellipse(wheelX, wheelY, 37, 37);
 }
 
 
-//recolors shirt when wheel is clicked
+/*/recolors shirt when wheel is clicked
 function recolor() {
     //increase color counter and assign tint
-    colorClick++;
-    blouse[wearing].tint = wheel[colorClick % 4];
-}
+    hairColorClick++;
+    blouse[wearing].tint = wheel[hairColorClick % 4];
+}*/
 
 
 //provides button to assemble a random outfit
 function mix() {
     //selects a random shirt, pants and shoe pairing
-    var randBlouse = round(random(3));
-    var randBottom = round(random(3));
-    var randShoes = round(random(3));
+    var randBlouse = round(random(blouse.length-1));
+    var randBottom = round(random(bottom.length-1));
+    var randShoes = round(random(shoes.length-1));
 
     //draw button in "clicked" mode
     //call setup to remove any clothes on the body
     clothesSetup();
     //selects random hair style
-    hairClick = round(random(3));
+    hairClick = round(random(hair[0].length-1));
+    hairColorClick = round(random(hair.length-1));
+    skinClick = round(random(skins.length-1));
 
     //positions random shirt on the body
     blouse[randBlouse].x = bodyCenter;
@@ -388,7 +460,7 @@ function mix() {
     bottom[randBottom].y = pantsCenter;
     //positions random shoes on the body
     feet[randShoes].x = bodyCenter;
-    feet[randShoes].y = shoesCenter; 
+    feet[randShoes].y = shoesCenter;
 }
 
 
@@ -401,11 +473,12 @@ function mix() {
 //Creates objects with parameters for
 //image, initial position, and center relative to the body.
 function makeItem(ipic, ix, iy, icenter) {
-    return {pic: ipic, x: ix, y: iy, 
-            center: icenter, 
-            tint: 255,
-            draw: drawItem,
-            };
+    return {
+        pic: ipic, x: ix, y: iy,
+        center: icenter,
+        tint: 255,
+        draw: drawItem,
+    };
 }
 
 

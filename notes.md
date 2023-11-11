@@ -2,8 +2,12 @@ Use this for exams
 
 What I have done: 
 * deployed simon html
-* deployed simon css
 * deployed startup html
+* deployed simon css
+* deployed startup css
+* deployed simon js
+* deployed startup js
+* deployed simon service
 
 Midterm study guide
 * In the following code, what does the link element do? 

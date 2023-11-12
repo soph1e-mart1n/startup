@@ -50,3 +50,13 @@ For this deliverable I implemented by JavaScript so that the application works f
 - **Database** - Displayed the clothes the user has. Currently this is stored and retrieved from local storage, but it will be replaced with the database data later.
 - **WebSocket** - I used random pictures in the gallety. This will be replaced with WebSocket images later.
 - **Application logic** - The user can interact with difference parts of the website, including the memory game and the dress-up page.
+
+* ## Service deliverable
+
+For this deliverable I added backend endpoints that receives votes and returns the voting totals.
+
+- **Node.js/Express HTTP service** - done!
+- **Static middleware for frontend** - done!
+- **Calls to third party endpoints** - For pictures in the gallery, I called random pictures.
+- **Backend service endpoints** - Placeholders for coins that stores the current amount of coins the user has.
+- **Frontend calls service endpoints** - I did this using the fetch function.

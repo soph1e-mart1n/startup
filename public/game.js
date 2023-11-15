@@ -192,52 +192,13 @@ function win() {
   saveScore(document.getElementsByClassName("fa-star").length * 2);
 }
 
-
-
-
-// Save score to server
-/*function saveScore(score) {
-  const moves = document.querySelector(".moves").innerText;
-  const stars = document.getElementsByClassName("fa-star").length;
-  const time = document.querySelector("#timer").innerHTML;
-
-  const data = {
-    moves,
-    stars,
-    time,
-  };
-
-  const response = fetch('/api/score', {
-    method: 'POST',
-    headers: {'Content-Type': 'application/json'},
-    body: JSON.stringify(score),
-  })
-  .then(response => {
-    if (!response.ok) {
-      throw new Error('Network response was not ok');
-    }
-    return response.json();
-  })
-  .then(() => {
-    // Fetch and display total coins after saving the score
-    fetch('/api/total-coins')
-    .then(response => response.json())
-    .then(data => {
-      const totalCoinsElement = document.querySelector(".total-coins");
-      totalCoinsElement.innerText = `Total Coins: ${data.totalCoins}`;
-    })
-    .catch(error => console.error('Error fetching total coins:', error));
-  })
-  .catch(error => console.error('Error saving score:', error));
-}*/
-
 function saveScore(score) {
-  const newScore = {score: score};
+  const newScore = { score: score };
 
   try {
     const response = fetch('/api/score', {
       method: 'POST',
-      headers: {'content-type': 'application/json'},
+      headers: { 'content-type': 'application/json' },
       body: JSON.stringify(newScore),
     });
 
@@ -256,8 +217,7 @@ function updateScoreLocal(newScore) {
   if (scoreText) {
     score = JSON.parse(scoreText);
   }
-  else
-  {
+  else {
     score = 0;
   }
 
@@ -265,82 +225,3 @@ function updateScoreLocal(newScore) {
 
   localStorage.setItem('score', JSON.stringify(score));
 }
-
-// Display saved scores and total coins from server
-/*function displayScore() {
-  fetch('/api/score')
-  .then(response => response.json())
-  .then(score => {
-    const myScore = score || 0;
-
-    const scoresList = document.querySelector(".scores-list");
-    scoresList.innerHTML = "";
-
-    score.forEach((score) => {
-      const li = document.createElement("li");
-      li.innerHTML = `<strong>Moves:</strong> ${score.moves}, <strong>Stars:</strong> ${score.stars}, <strong>Time:</strong> ${score.time}, <strong>Date:</strong> ${score.timestamp}`;
-      scoresList.appendChild(li);
-    });
-  })
-  .catch(error => console.error('Error fetching scores:', error));
-
-  // Fetch and display total coins
-  fetch('/api/total-coins')
-  .then(response => response.json())
-  .then(data => {
-    const totalCoinsElement = document.querySelector(".total-coins");
-    totalCoinsElement.innerText = `Total Coins: ${data.totalCoins}`;
-  })
-  .catch(error => console.error('Error fetching total coins:', error));
-}
-
-// Call displayScores function to show scores when the page loads
-window.onload = displayScores;*/
-
-
-
-// // Save score to local storage
-// function saveScore() {
-//   const moves = document.querySelector(".moves").innerText;
-//   const stars = document.getElementsByClassName("fa-star").length;
-//   const time = document.querySelector("#timer").innerHTML;
-
-//   const score = {
-//     moves,
-//     stars,
-//     time,
-//     timestamp: new Date().toLocaleString(),
-//   };
-
-//   let scores = JSON.parse(localStorage.getItem("scores")) || [];
-//   scores.push(score);
-//   localStorage.setItem("scores", JSON.stringify(scores));
-
-//   // Update or initialize total coins in local storage
-//   let totalCoins = parseInt(localStorage.getItem("totalCoins")) || 0;
-//   totalCoins += stars * 2; // Increase total coins based on stars earned
-//   localStorage.setItem("totalCoins", totalCoins);
-// }
-
-// Display saved scores and total coins
-// function displayScores() {
-//   const scores = JSON.parse(localStorage.getItem("scores")) || [];
-//   const totalCoins = localStorage.getItem("totalCoins") || 0;
-
-//   const scoresList = document.querySelector(".scores-list");
-//   scoresList.innerHTML = "";
-
-//   scores.forEach((score) => {
-//     const li = document.createElement("li");
-//     li.innerHTML = `<strong>Moves:</strong> ${score.moves}, <strong>Stars:</strong> ${score.stars}, <strong>Time:</strong> ${score.time}, <strong>Date:</strong> ${score.timestamp}`;
-//     scoresList.appendChild(li);
-//   });
-
-//   // Display total coins
-//   const totalCoinsElement = document.querySelector(".total-coins");
-//   totalCoinsElement.innerText = `Total Coins: ${totalCoins}`;
-// }
-
-
-// // Call displayScores function to show scores when the page loads
-// window.onload = displayScores();

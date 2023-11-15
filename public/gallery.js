@@ -28,7 +28,7 @@ async function loadScores() {
   function displayScore(score) {
     if(score)
     {
-        document.querySelector("#score").innerText = JSON.stringify(score);
+        document.querySelector("#score").innerText = score.score;
     }
   }
   

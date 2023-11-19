@@ -53,10 +53,18 @@ For this deliverable I implemented by JavaScript so that the application works f
 
 * ## Service deliverable
 
-For this deliverable I added backend endpoints that receives votes and returns the voting totals.
+For this deliverable I added backend endpoints that receives points and returns the point totals.
 
 - **Node.js/Express HTTP service** - done!
 - **Static middleware for frontend** - done!
 - **Calls to third party endpoints** - For pictures in the gallery, I called random pictures.
 - **Backend service endpoints** - Placeholders for coins that stores the current amount of coins the user has.
 - **Frontend calls service endpoints** - I did this using the fetch function.
+
+* ## DB deliverable
+
+For this deliverable I stored the points in the database.
+
+- **MongoDB Atlas database created** - done!
+- **Endpoints for data** - My stubbed out endpoints now process the data and send it to Mongo.
+- **Stores data in MongoDB** - done!

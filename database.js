@@ -1,13 +1,12 @@
 const { MongoClient } = require('mongodb');
+const bcrypt = require('bcrypt');
+const uuid = require('uuid');
 const config = require('./dbConfig.json');
 
 const url = `mongodb+srv://${config.userName}:${config.password}@${config.hostname}`;
 const client = new MongoClient(url);
-const db = client.db('simon');
-const scoreCollection = db.collection('score');
-await scoreCollection.insertOne(
-  {score:0}
-);
+const db = client.db('startup');
+const userCollection = db.collection('user');
 
 // This will asynchronously test the connection and exit the process if it fails
 (async function testConnection() {
@@ -18,18 +17,25 @@ await scoreCollection.insertOne(
   process.exit(1);
 });
 
-async function addScore(score) {
-  inc = score.score;
-  const result = await scoreCollection.updateOne(
-    {score: {value: inc}}
-  );
-  return result;
+//Register user 
+async function createUser(username, password) {
+  const passwordHash = await bcrypt.hash(password,31);
+
+  const user = {
+    username: username,
+    password: passwordHash,
+    token: uuid.v4(),
+  };
+  await userCollection.insertOne(user);
+  return user;
 }
 
-function getScore() {
-  const query = { score: { $gt: 0 } };
-  const cursor = scoreCollection.find(query);
-  return cursor;
+function getUserByToken(token) {
+  return userCollection.findOne({ token: token });
 }
 
-module.exports = { addScore, getScore };
+async function getUser(username) {
+  return userCollection.findOne({username: username});
+}
+
+module.exports = { createUser, getUser, getUserByToken };

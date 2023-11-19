@@ -66,6 +66,7 @@ async function loginOrCreate(endpoint) {
 
     if (response.ok) {
         localStorage.setItem('username', username);
+        var a = document.getElementById('navbar').querySelector('a').style.display = 'block';
         window.location.href = 'game.html';
     } else {
         const body = await response.json();
@@ -77,16 +78,16 @@ async function loginOrCreate(endpoint) {
 }
 
 function logout() {
-    localStorage.removeItem('userName');
+    localStorage.removeItem('username');
     fetch(`/api/auth/logout`, {
         method: 'delete',
     }).then(() => (window.location.href = '/'));
 }
 
-async function getUser(email) {
+async function getUser(username) {
     let scores = [];
     // See if we have a user with the given email.
-    const response = await fetch(`/api/user/${email}`);
+    const response = await fetch(`/api/user/${username}`);
     if (response.status === 200) {
         return response.json();
     }

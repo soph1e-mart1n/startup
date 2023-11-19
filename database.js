@@ -17,9 +17,17 @@ const userCollection = db.collection('user');
   process.exit(1);
 });
 
+async function getUser(username) {
+  return userCollection.findOne({username: username});
+}
+
+function getUserByToken(token) {
+  return userCollection.findOne({ token: token });
+}
+
 //Register user 
 async function createUser(username, password) {
-  const passwordHash = await bcrypt.hash(password,31);
+  const passwordHash = await bcrypt.hash(password,10);
 
   const user = {
     username: username,
@@ -27,15 +35,12 @@ async function createUser(username, password) {
     token: uuid.v4(),
   };
   await userCollection.insertOne(user);
+
   return user;
 }
 
-function getUserByToken(token) {
-  return userCollection.findOne({ token: token });
-}
-
-async function getUser(username) {
-  return userCollection.findOne({username: username});
-}
-
-module.exports = { createUser, getUser, getUserByToken };
+module.exports = {
+  getUser,
+  getUserByToken,
+  createUser,
+};

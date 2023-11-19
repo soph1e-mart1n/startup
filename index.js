@@ -1,6 +1,6 @@
-const express = require('express');
-const bcrypt = require('bcrypt');
 const cookieParser = require('cookie-parser');
+const bcrypt = require('bcrypt');
+const express = require('express');
 const app = express();
 const DB = require('./database.js');
 
@@ -12,11 +12,14 @@ const port = process.argv.length > 2 ? process.argv[2] : 4000;
 // JSON body parsing using built-in middleware
 app.use(express.json());
 
-//
+// Use the cookie parser middleware for tracking authentication tokens
 app.use(cookieParser());
 
 // Serve up the applications static content
 app.use(express.static('public'));
+
+// Trust headers that are forwarded from the proxy so we can determine IP addresses
+app.set('trust proxy', true);
 
 // Router for service endpoints
 var apiRouter = express.Router();
@@ -24,10 +27,10 @@ app.use(`/api`, apiRouter);
 
 //Create user
 apiRouter.post('/auth/create', async (req, res) => {
-  if (await DB.getUser(req.body.email)) {
+  if (await DB.getUser(req.body.username)) {
     res.status(409).send({ msg: 'Existing user' });
   } else {
-    const user = await DB.createUser(req.body.email, req.body.password);
+    const user = await DB.createUser(req.body.username, req.body.password);
 
     // Set the cookie
     setAuthCookie(res, user.token);
@@ -40,7 +43,7 @@ apiRouter.post('/auth/create', async (req, res) => {
 
 //Login
 apiRouter.post('/auth/login',async (req,res) => {
-  const user = await DB.getUser(req.body.email);
+  const user = await DB.getUser(req.body.username);
   if (user) {
     if (await bcrypt.compare(req.body.password, user.password)) {
       setAuthCookie(res, user.token);

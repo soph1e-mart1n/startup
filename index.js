@@ -82,19 +82,6 @@ secureApiRouter.use(async (req, res, next) => {
   }
 });
 
-// GetScores
-apiRouter.get('/score', async (_req, res) => {
-  const score = await DB.getScore();
-  res.send(score);
-});
-
-// SubmitScore
-apiRouter.post('/score', async (req, res) => {
-  DB.addScore(req.body);
-  const score = await DB.getScore();
-  res.send(score);
-});
-
 // Make avatar
 const makeAvatar = require('cartoon-avatar');
 const url = makeAvatar.generate_avatar({ "gender": "female" });

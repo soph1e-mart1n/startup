@@ -68,3 +68,12 @@ For this deliverable I stored the points in the database.
 - **MongoDB Atlas database created** - done!
 - **Endpoints for data** - My stubbed out endpoints now process the data and send it to Mongo.
 - **Stores data in MongoDB** - done!
+
+## Login deliverable
+
+For this deliverable I associate the coins with the logged in user.
+
+- **User registration** - Creates a new account in the database.
+- **existing user** - Stores the coins under the same user if the user already exists.
+- **Use MongoDB to store credentials** - Stores both user and their coins.
+- **Restricts functionality** - You cannot save coins until you have logged in.

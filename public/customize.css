@@ -11,8 +11,8 @@ body {
   padding: 0;
   display: flex;
   flex-direction: column;
-  justify-content:center;
-  align-items:center;
+  justify-content: center;
+  align-items: center;
 }
 
 img {
@@ -20,6 +20,29 @@ img {
   display: inline-block;
   width: 100%;
   height: auto;
+}
+
+.score {
+  outline-width: 5px;
+  outline-style: solid;
+  outline-color: #d611ba;
+  border-radius: 5px;
+  border-color: #d611ba;
+  padding-left: 1%;
+  padding-right: 1%;
+  padding-top: 0.5%;
+  padding-bottom: 0.5%;
+  height: auto;
+  min-width: 7%;
+  margin-bottom: 2%;
+  text-align: center;
+  font-size: 18px;
+}
+
+.score #girlCoin {
+  position: relative;
+  width: auto;
+  height: 18px;
 }
 
 .buttons ul {
@@ -41,10 +64,11 @@ img {
 }
 
 .girly {
-  margin-top: 5%;
+  margin-top: 2%;
   display: block;
   width: 100%;
   height: auto;
+  padding-left: 4%;
 }
 
 .skin {
@@ -232,7 +256,7 @@ img {
 
 .shoes #shoe4 {
   padding-top: 23.7%;
-  padding-left: 3.1%;
+  padding-left: 3%;
   width: 7%;
 }
 
@@ -259,34 +283,35 @@ img {
 .hairs .hair {
   visibility: hidden;
   z-index: 4;
+  margin-left: 2.25%;
 }
 
 .hairs #hair1 {
-  padding-top: 4.5%;
+  padding-top: 1.5%;
   padding-left: 3.05%;
   width: 6.95%;
 }
 
 .hairs #hair2 {
-  padding-top: 4%;
+  padding-top: 1%;
   padding-left: 3.2%;
   width: 6.8%;
 }
 
 .hairs #hair3 {
-  padding-top: 4.65%;
+  padding-top: 1.65%;
   padding-left: 3.2%;
   width: 6.8%;
 }
 
 .hairs #hair4 {
-  padding-top: 4.7%;
+  padding-top: 1.7%;
   padding-left: 2.8%;
   width: 7.4%;
 }
 
 .hairs #hair5 {
-  padding-top: 3.8%;
+  padding-top: 0.8%;
   padding-left: 2%;
   width: 8.2%;
 }

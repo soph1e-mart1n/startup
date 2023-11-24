@@ -28,6 +28,16 @@ a:hover {
 	color: #309fe3;
 }
 
+.logout {
+	background: rgba(255, 255, 255, 0.9);
+	padding: 40px;
+	max-width: 600px;
+	margin: 40px auto;
+	border-radius: 10px;
+	-webkit-box-shadow: 0 30px 60px 0 rgba(0, 0, 0, 0.3);
+	box-shadow: 0 30px 60px 0 rgba(0, 0, 0, 0.3);
+}
+
 .form {
 	background: rgba(255, 255, 255, 0.9);
 	padding: 40px;
@@ -175,6 +185,7 @@ textarea {
 	color: #fff;
 	transition: all 0.5s ease;
 	-webkit-appearance: none;
+	width: 100%;
 }
 
 .button:hover,
@@ -191,6 +202,10 @@ textarea {
 	margin-top: -20px;
 	text-align: right;
 }
+.forgot2 {
+	margin-top: -20px;
+	text-align: center;
+  }
 
 /*Nav bar CSS*/
 /* The navigation bar */

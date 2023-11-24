@@ -6,7 +6,7 @@ const DB = require('./database.js');
 
 const authCookieName = 'token';
 
-// The service port. In production the application is statically hosted by the service on the same port.
+// The service port may be set on the command line
 const port = process.argv.length > 2 ? process.argv[2] : 4000;
 
 // JSON body parsing using built-in middleware
@@ -25,7 +25,7 @@ app.set('trust proxy', true);
 var apiRouter = express.Router();
 app.use(`/api`, apiRouter);
 
-//Create user
+// CreateAuth token for a new user
 apiRouter.post('/auth/create', async (req, res) => {
   if (await DB.getUser(req.body.username)) {
     res.status(409).send({ msg: 'Existing user' });
@@ -41,8 +41,8 @@ apiRouter.post('/auth/create', async (req, res) => {
   }
 });
 
-//Login
-apiRouter.post('/auth/login',async (req,res) => {
+// GetAuth token for the provided credentials
+apiRouter.post('/auth/login', async (req, res) => {
   const user = await DB.getUser(req.body.username);
   if (user) {
     if (await bcrypt.compare(req.body.password, user.password)) {
@@ -51,24 +51,24 @@ apiRouter.post('/auth/login',async (req,res) => {
       return;
     }
   }
-  res.status(401).send({ msg: "Username or Password is incorect"})
-})
+  res.status(401).send({ msg: 'Unauthorized' });
+});
 
-//Logging out
-apiRouter.delete('/auth/logout', (_req,res) => {
+// DeleteAuth token if stored in cookie
+apiRouter.delete('/auth/logout', (_req, res) => {
   res.clearCookie(authCookieName);
   res.status(204).end();
 });
 
-//Authorizing user?
-apiRouter.get('/user/:username', async (req,res) => {
+// GetUser returns information about a user
+apiRouter.get('/user/:username', async (req, res) => {
   const user = await DB.getUser(req.params.username);
-  if(user) {
+  if (user) {
     const token = req?.cookies.token;
-    res.send({ username: user.username, authenticated: token === user.token});
+    res.send({ username: user.username, authenticated: token === user.token });
     return;
   }
-  res.status(404).send({ msg: "Not Found"})
+  res.status(404).send({ msg: 'Unknown' });
 });
 
 // secureApiRouter verifies credentials for endpoints
@@ -84,10 +84,6 @@ secureApiRouter.use(async (req, res, next) => {
     res.status(401).send({ msg: 'Unauthorized' });
   }
 });
-
-// Make avatar
-const makeAvatar = require('cartoon-avatar');
-const url = makeAvatar.generate_avatar({ "gender": "female" });
 
 // Default error handler
 app.use(function (err, req, res, next) {

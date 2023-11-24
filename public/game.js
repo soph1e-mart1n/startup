@@ -189,39 +189,39 @@ function win() {
     stopTimer = true;
   }
 
-  saveScore(document.getElementsByClassName("fa-star").length * 2);
+  saveCoin(document.getElementsByClassName("fa-star").length * 2);
 }
 
-function saveScore(score) {
-  const newScore = { score: score };
+async function saveCoin(coin) {
+  const newCoin = { coin: coin };
 
   try {
-    const response = fetch('/api/score', {
+    const response = await fetch('/api/coin', {
       method: 'POST',
       headers: { 'content-type': 'application/json' },
-      body: JSON.stringify(newScore),
+      body: JSON.stringify(newCoin),
     });
 
     // Store what the service gave us as the high scores
-    const score = response.json();
-    localStorage.setItem('score', JSON.stringify(score));
+    const coins = await response.json();
+    localStorage.setItem('coin', JSON.stringify(coins));
   } catch {
     // If there was an error then just track scores locally
-    updateScoreLocal(newScore);
+    updateScoreLocal(newCoin);
   }
 }
 
-function updateScoreLocal(newScore) {
-  let score;
-  const scoreText = localStorage.getItem('score');
-  if (scoreText) {
-    score = JSON.parse(scoreText);
+function updateScoreLocal(newCoin) {
+  let coin;
+  const coinText = localStorage.getItem('coin');
+  if (coinText) {
+    coin = JSON.parse(coinText);
   }
   else {
-    score = 0;
+    coin = 0;
   }
 
-  score += newScore;
+  coin += newCoin;
 
-  localStorage.setItem('score', JSON.stringify(score));
+  localStorage.setItem('coin', JSON.stringify(coin));
 }

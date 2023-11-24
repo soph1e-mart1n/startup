@@ -1,4 +1,35 @@
 $(document).ready(function () {
+  async function loadCoins() {
+    let coins = 0;
+    try {
+      // Get the latest coins from the service
+      const response = await fetch('/api/coins');
+      coins = await response.json();
+
+      // Save the coins in case we go offline in the future
+      localStorage.setItem('coins', JSON.stringify(coins));
+    } catch {
+      // If there was an error then just use the last saved coins
+      const coinsText = localStorage.getItem('coins');
+      if (coinsText) {
+        coins = JSON.parse(coinsText);
+      }
+    }
+
+    displayCoins(coins);
+  }
+
+  function displayCoins(coins) {
+    const el = document.querySelector('#coins');
+
+    if(coins) {
+      el.textContent = coins.coin;
+    }
+    else {
+      el.textContent = 0;
+    }
+  }
+
   function ImageSwitcher(choices, i) {
     i = Math.floor(Math.random() * choices.length);
 

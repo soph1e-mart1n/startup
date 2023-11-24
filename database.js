@@ -7,7 +7,6 @@ const url = `mongodb+srv://${config.userName}:${config.password}@${config.hostna
 const client = new MongoClient(url);
 const db = client.db('startup');
 const userCollection = db.collection('user');
-const scoreCollection = db.collection('score');
 
 // This will asynchronously test the connection and exit the process if it fails
 (async function testConnection() {
@@ -26,6 +25,19 @@ function getUserByToken(token) {
   return userCollection.findOne({ token: token });
 }
 
+function addCoin(coin) {
+  var user = userCollection.findOne({ username: username });
+  var totCoins = user.coin;
+  totCoins += coin.coin;
+  user.coin = totCoins;
+  return totCoins;
+}
+
+function getCoins(username) {
+  var user = userCollection.findOne({ username: username });
+  return user.coin;
+}
+
 async function createUser(username, password) {
   // Hash the password before we insert it into the database
   const passwordHash = await bcrypt.hash(password, 10);
@@ -34,6 +46,7 @@ async function createUser(username, password) {
     username: username,
     password: passwordHash,
     token: uuid.v4(),
+    coin: 0,
   };
   await userCollection.insertOne(user);
 
@@ -44,4 +57,6 @@ module.exports = {
   getUser,
   getUserByToken,
   createUser,
+  addCoin,
+  getCoins,
 };

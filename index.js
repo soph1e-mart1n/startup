@@ -85,6 +85,20 @@ secureApiRouter.use(async (req, res, next) => {
   }
 });
 
+// GetUser returns information about a user
+secureApiRouter.get('/coins', async (req, res) => {
+  const coins = await DB.getCoins(req.params.username);
+  res.send(coins);
+});
+
+// SubmitScore
+secureApiRouter.post('/coin', async (req, res) => {
+  const coin = { ...req.body, ip: req.ip };
+  await DB.addCoin(coin);
+  const coins = await DB.getCoins(req.body.username);
+  res.send(coins);
+});
+
 // Default error handler
 app.use(function (err, req, res, next) {
   res.status(500).send({ type: err.name, message: err.message });

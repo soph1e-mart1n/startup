@@ -202,10 +202,67 @@ textarea {
 	margin-top: -20px;
 	text-align: right;
 }
+
 .forgot2 {
 	margin-top: -20px;
 	text-align: center;
+}
+
+.errorPage {
+    z-index: 1000;
+    text-align: center;
+    padding: 30px;
+    top: 50%;
+    left: 50%;
+    border-style: solid;
+    border-radius: 10px;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    background-color: rgb(214 17 186 / 64%);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 50%;
+    max-width: 550px;
+    height: auto;
+    opacity: 1;
+    transition: 1s;
+    animation-name: animatetop;
+    animation-duration: 0.25s;
+    animation-timing-function: linear;
+}
+
+.errorPage h1 {
+    color: white;
+    margin-bottom: 2%;
+}
+
+.errorPage button {
+	background: #46a9e6;
+	border-color: #46a9e6;
+	color: #ffffff;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+.errorPage.closed {
+	display: none;
+	z-index: 1;
   }
+
+@keyframes animatetop {
+	from {
+		top: -300px;
+		opacity: 0;
+	}
+
+	to {
+		top: 0;
+		opacity: 1;
+	}
+}
 
 /*Nav bar CSS*/
 /* The navigation bar */
@@ -238,7 +295,7 @@ textarea {
 .footer {
 	overflow: hidden;
 	background-color: #d611ba;
-	position: relative;
+	position: absolute;
 	bottom: 0;
 	width: 100%;
 }

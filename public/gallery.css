@@ -80,6 +80,7 @@ h1 {
 	overflow: hidden;
 	background-color: #d611ba;
 	position: relative;
+	margin: 0 0 0 0;
 	bottom: 0;
 	width: 100%;
 }

@@ -65,6 +65,48 @@ $(document).ready(function () {
     };
   }
 
+  var socket;
+
+  function configureWebSocket() {
+    const protocol = window.location.protocol === 'http:' ? 'ws' : 'wss';
+    socket = new WebSocket(`${protocol}://${window.location.host}/ws`);
+    socket.onmessage = async (event) => {
+      const msg = JSON.parse(await event.data.text());
+      if (msg.type === 'girlySubmit') {
+        displayMsg('player', msg.from, `updated their girly!`);
+      }
+    };
+  }
+
+  function displayMsg(cls, from, msg) {
+    const chatText = document.querySelector('#player-messages');
+    chatText.innerHTML =
+      `<div class="event"><span class="${cls}-event">${from}</span> ${msg}</div>` + chatText.innerHTML;
+  }
+
+  function broadcastEvent(from, type, value) {
+    const event = {
+      from: from,
+      type: type,
+      value: value,
+    };
+    socket.send(JSON.stringify(event));
+  }
+
+  function getPlayerName() {
+    return localStorage.getItem('userName') ?? 'Mystery player';
+  }
+
+  function saveOutfit() {
+    var hair = $("hairs_obj:visible");
+    var skin = $("skin:visible");
+    var face = $("faces:visible");
+    var top = $("tops:visible");
+    var pant = $("pants:visible");
+    var shoe = $("shoes:visible");
+
+  }
+
   var pants = $(".pant");
   var shirts = $(".shirt");
   var shoes = $(".shoe");
@@ -108,6 +150,15 @@ $(document).ready(function () {
     colors_picker.Next();
   };
 
+  const playerNameEl = document.querySelector('.player-name');
+  playerNameEl.textContent = getPlayerName();
+  configureWebSocket();
+
+  document.getElementById("submit_button").onclick = function () {
+    saveOutfit();
+    broadcastEvent(getPlayerName(), 'girlySubmit', {});
+  }
+  
   pants_picker.Next();
   shirt_picker.Next();
   shoes_picker.Next();

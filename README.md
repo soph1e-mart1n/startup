@@ -6,7 +6,7 @@ Most people majoring in computer science can agree that they can barely take car
 ## Design
 ![CS Girly](https://github.com/soph1e-mart1n/startup/assets/112999477/640e153c-5929-47d4-9c32-bb7b26f868e7)
 
-* ## Key Features
+## Key Features
 * Secure login over HTTPS
 * Customize, feed, and take care of your Girly
 * Play games to earn GirlCoins

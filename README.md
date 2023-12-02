@@ -21,7 +21,7 @@ Most people majoring in computer science can agree that they can barely take car
 * **Web Service** - Backend service for logging in, retrieving and submitting character customization, and retrieving and saving money value. 
 * **Authentication** - Register and login users. Credentials stored in database. Can't customize character without authentication.
 * **Data Storage** - Stores users, user customization choices, and money earned.
-* **WebSocket** - When each user changes/saves their customizations, their new character is broadcasted to all other users.
+* **WebSocket** - When each user changes/saves their customizations, a message is broadcasted to all other users.
 
 ## HTML Deliverable
 * **HTML pages** - Four HTML page that represent the ability to login, care for your character, play a game, and view other characters.
@@ -30,7 +30,7 @@ Most people majoring in computer science can agree that they can barely take car
 * **Images** - On the character page, I included images of a character and what you can use to take care of her.
 * **Login** - Input box and submit button for login.
 * **Database** - The gallery and character design and current well-being represents data pulled from the database.
-* **WebSocket** - The gallery represents realtime character designs.
+* **WebSocket** - The text represents realtime character change messages.
 
 ## CSS Deliverable
 For this deliverable I properly styled the application into an organized appearance.
@@ -48,7 +48,7 @@ For this deliverable I implemented by JavaScript so that the application works f
 
 - **Login** - When you press the login button it takes you to the customization page.
 - **Database** - Displayed the clothes the user has. Currently this is stored and retrieved from local storage, but it will be replaced with the database data later.
-- **WebSocket** - I used random pictures in the gallety. This will be replaced with WebSocket images later.
+- **WebSocket** - I used random text. This will be replaced with WebSocket text later.
 - **Application logic** - The user can interact with difference parts of the website, including the memory game and the dress-up page.
 
 * ## Service deliverable
@@ -77,3 +77,12 @@ For this deliverable I associate the coins with the logged in user.
 - **existing user** - Stores the coins under the same user if the user already exists.
 - **Use MongoDB to store credentials** - Stores both user and their coins.
 - **Restricts functionality** - You cannot save coins until you have logged in.
+
+## WebSocket deliverable
+
+For this deliverable I used webSocket to display messages of user updates to their Girly in realtime.
+
+- **Backend listens for WebSocket connection** - done!
+- **Frontend makes WebSocket connection** - done!
+- **Data sent over WebSocket connection** - done!
+- **WebSocket data displayed** - All user updates displayed in realtime.

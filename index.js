@@ -66,7 +66,7 @@ apiRouter.get('/user/:username', async (req, res) => {
   const user = await DB.getUser(req.params.username);
   if (user) {
     const token = req?.cookies.token;
-    res.send({ username: user.username, authenticated: token === user.token });
+    res.send({ username: user.username, authenticated: token === user.token, coin: user.coin });
     return;
   }
   res.status(404).send({ msg: 'Unknown' });
@@ -84,6 +84,33 @@ secureApiRouter.use(async (req, res, next) => {
   } else {
     res.status(401).send({ msg: 'Unauthorized' });
   }
+});
+
+apiRouter.post('/girly/create', async (req, res) => {
+  var girly = await DB.getGirly(req.body.username);
+  if (girly) {
+    girly = await DB.replaceOutfit(req.body.username, req.body.outfit);
+  } else {
+    girly = await DB.setOutfit(req.body.username, req.body.outfit);
+  }
+  res.send({
+    outfit: girly,
+  });
+});
+
+apiRouter.get('/outfit/:username', async (req, res) => {
+  const girly = await DB.getGirly(req.params.username);
+  if(girly) {
+    res.send({ outfit: girly.outfit });
+    return;
+  }
+  res.status(404).send({ msg: 'Unknown' });
+});
+
+// SubmitCoin
+secureApiRouter.post('/coin/add', async (req, res) => {
+  const coins = await DB.addCoin(req.body.username,req.body.coin);
+  res.send(coins);
 });
 
 // Default error handler

@@ -7,7 +7,7 @@ const url = `mongodb+srv://${config.userName}:${config.password}@${config.hostna
 const client = new MongoClient(url);
 const db = client.db('startup');
 const userCollection = db.collection('user');
-const scoreCollection = db.collection('score');
+const girlyCollection = db.collection('girly');
 
 // This will asynchronously test the connection and exit the process if it fails
 (async function testConnection() {
@@ -33,6 +33,7 @@ async function createUser(username, password) {
   const user = {
     username: username,
     password: passwordHash,
+    coin: 0,
     token: uuid.v4(),
   };
   await userCollection.insertOne(user);
@@ -40,8 +41,38 @@ async function createUser(username, password) {
   return user;
 }
 
+function addCoin(username, coin) {
+  return userCollection.findOneAndUpdate({ username: username }, { $inc: { coin: coin } });
+}
+
+function setOutfit(username, outfit) {
+  const girly = {
+    username: username,
+    outfit: outfit,
+  };
+  girlyCollection.insertOne(girly);
+  return girly;
+}
+
+function replaceOutfit(username, outfit) {
+  const girly = {
+    username: username,
+    outfit: outfit,
+  };
+  girlyCollection.findOneAndReplace({ username: username }, girly);
+  return girly;
+}
+
+function getGirly(username) {
+  return girlyCollection.findOne({ username: username });
+}
+
 module.exports = {
   getUser,
   getUserByToken,
   createUser,
+  addCoin,
+  setOutfit,
+  replaceOutfit,
+  getGirly,
 };

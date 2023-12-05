@@ -1,5 +1,5 @@
-let card1 = ""; // The former
-let card2 = ""; // The latter
+let card1 = "";
+let card2 = "";
 let card1Parent = "";
 let card2Parent = "";
 let ready = true;
@@ -187,41 +187,37 @@ function win() {
       document.querySelector(".winPage").className = "winPage";
     }, 1000);
     stopTimer = true;
+    saveCoin(document.getElementsByClassName("fa-star").length * 2);
   }
-
-  saveScore(document.getElementsByClassName("fa-star").length * 2);
 }
 
-function saveScore(score) {
-  const newScore = { score: score };
+async function saveCoin(coin) {
+  const userName = localStorage.getItem('userName');
 
   try {
-    const response = fetch('/api/score', {
+    const response = await fetch('/api/coin/add', {
       method: 'POST',
       headers: { 'content-type': 'application/json' },
-      body: JSON.stringify(newScore),
+      body: JSON.stringify({username: userName, coin: coin}),
     });
-
-    // Store what the service gave us as the high scores
-    const score = response.json();
-    localStorage.setItem('score', JSON.stringify(score));
+    const coins = await response.json();
+    localStorage.setItem('coin', JSON.stringify(coins.coin));
   } catch {
-    // If there was an error then just track scores locally
-    updateScoreLocal(newScore);
+    updateScoreLocal(coin);
   }
 }
 
-function updateScoreLocal(newScore) {
-  let score;
-  const scoreText = localStorage.getItem('score');
-  if (scoreText) {
-    score = JSON.parse(scoreText);
+function updateScoreLocal(newCoin) {
+  let coin;
+  const coinText = localStorage.getItem('coin');
+  if (coinText) {
+    coin = JSON.parse(coinText);
   }
   else {
-    score = 0;
+    coin = 0;
   }
 
-  score += newScore;
+  coin += newCoin;
 
-  localStorage.setItem('score', JSON.stringify(score));
+  localStorage.setItem('coin', JSON.stringify(coin));
 }

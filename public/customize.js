@@ -186,16 +186,6 @@ $(document).ready(function () {
     }
   }
 
-  function getCurrColor(choices,hair) {
-    var itr = 0;
-    var currChoice = choices[itr];
-    while(!hair.includes(currChoice)) {
-      itr += 1;
-      currChoice = choices[itr];
-    }
-    return currChoice;
-  }
-
   async function saveOutfit() {
     currHair = getCurr($(".hair"));
     currSkin = getCurr($(".character"));
@@ -203,7 +193,7 @@ $(document).ready(function () {
     currShirt = getCurr($(".shirt"));
     currPants = getCurr($(".pant"));
     currShoes = getCurr($(".shoe"));
-    currColor = getCurrColor(["Blonde", "Blue", "Brown", "DarkBrown", "LightBrown", "Red"],currHair);
+    currColor = currHair.substring(80,currHair.length-4);
 
     const outfit = {
       hair: currHair,
@@ -286,7 +276,7 @@ $(document).ready(function () {
       next = face_picker.Next().src;
     }
     next = colors_picker.Next();
-    while(!next.includes(color))
+    while(next != color)
     {
       next = colors_picker.Next();
     }

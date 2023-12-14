@@ -81,3 +81,11 @@ For this deliverable I used webSocket to display messages of user updates to the
 - **Frontend makes WebSocket connection** - done!
 - **Data sent over WebSocket connection** - done!
 - **WebSocket data displayed** - All user updates displayed in realtime.
+
+## React deliverable
+For this deliverable I converted the application over to use React.
+
+- **Bundled and transpiled** - done!
+- **Components** - Login, Game, Customize, and Gallery are all components.
+- **Router** - Routing between all components using the navbar.
+- **Hooks** - Used React's useEffect hook as a transition from using JS's on document load

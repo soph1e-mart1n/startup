@@ -85,6 +85,8 @@ For this deliverable I used webSocket to display messages of user updates to the
 ## React deliverable
 For this deliverable I converted the application over to use React.
 
+Used a different GitHub repository: https://github.com/soph1e-mart1n/startup-react.git
+
 - **Bundled and transpiled** - done!
 - **Components** - Login, Game, Customize, and Gallery are all components.
 - **Router** - Routing between all components using the navbar.

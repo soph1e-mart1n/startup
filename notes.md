@@ -1,10 +1,12 @@
 # **Final Study Guide**
-* What ports are used for HTTP, HTTPS, SSH?
+![image](https://github.com/soph1e-mart1n/startup/assets/112999477/12fe7f80-4f0b-4306-be11-5c5a1d1b6885)
+
+* ### What ports are used for HTTP, HTTPS, SSH?
   * By default, HTTPS connections use TCP port 443. HTTP, the unsecure protocol, uses port 80. SSH is 20
   * When you connect to a device on the internet you need both an IP address and a numbered port. Port numbers allow a single device to support multiple protocols (e.g. HTTP, HTTPS, FTP, or SSH) as well as different types of services (e.g. search, document, or authentication). The ports may be exposed externally, or they may only be used internally on the device. For example, the HTTPS port (443) might allow the world to connect, the SSH port (22) might only allow computers at your school, and a service defined port (say 3000) may only allow access to processes running on the device.
   * ![image](https://github.com/soph1e-mart1n/startup/assets/112999477/6b8f79a9-bcb2-40c5-9110-9fa4de76e5c6)
 
-* What do HTTP status codes in the 300, 400, 500 range indicate?
+* ### What do HTTP status codes in the 300, 400, 500 range indicate?
   * ![image](https://github.com/soph1e-mart1n/startup/assets/112999477/50ce755d-cebf-4cb3-8836-1ae07401294c)
   * ![image](https://github.com/soph1e-mart1n/startup/assets/112999477/c67fd001-cc58-499c-8de9-7c77f291a43b)
   * ## Status codes
@@ -38,10 +40,10 @@ Within those ranges here are some of the more common codes. See the [MDN documen
 | 429  | Too many requests                                                                    | The client is making too many requests in too short of a time period.                                                             |
 | 500  | Internal server error                                                                | The server failed to properly process the request.                                                                                |
 | 503  | Service unavailable                                                                  | The server is temporarily down. The client should try again with an exponential back off.   
-* What does the HTTP header content-type allows you to do?
+* ### What does the HTTP header content-type allows you to do?
   * The Content-Type header field is used to specify the nature of the data in the body of an entity, by giving type and subtype identifiers, and by providing auxiliary information that may be required for certain types. It helps the browser or server understand what format the information being sent/requested is in, improving the way it is processed and displayed.
   * 	The format of the content being sent. These are described using standard MIME types.
-* What do the following attributes of a cookie do?
+* ### What do the following attributes of a cookie do?
   * Domain
     * ![image](https://github.com/soph1e-mart1n/startup/assets/112999477/1836b1ad-eda9-40ae-9593-f416ab20a897)
   * Path
@@ -50,6 +52,7 @@ Within those ranges here are some of the more common codes. See the [MDN documen
     * ![image](https://github.com/soph1e-mart1n/startup/assets/112999477/9a793bd4-574b-4a21-b3c7-27341b3542af)
   * HTTPOnly
     * A cookie with the HttpOnly attribute is inaccessible to the JavaScript Document.cookie API; it's only sent to the server. For example, cookies that persist in server-side sessions don't need to be available to JavaScript and should have the HttpOnly attribute. This precaution helps mitigate cross-site scripting (XSS) attacks.
+  * ![image](https://github.com/soph1e-mart1n/startup/assets/112999477/2595d68d-87dc-4cf2-a129-f2007b15b396)
   * An HTTP cookie (web cookie, browser cookie) is a small piece of data that a server sends to a user's web browser. The browser may store the cookie and send it back to the same server with later requests. Typically, an HTTP cookie is used to tell if two requests come from the same browser—keeping a user logged in, for example. It remembers stateful information for the stateless HTTP protocol.
     Cookies are mainly used for three purposes:
     Session management
@@ -58,7 +61,7 @@ Within those ranges here are some of the more common codes. See the [MDN documen
     User preferences, themes, and other settings
     Tracking
     Recording and analyzing user behavior
-* Assuming the following Express middleware, what would be the console.log output for an HTTP GET request with a URL path of /foo/bar?
+* ### Assuming the following Express middleware, what would be the console.log output for an HTTP GET request with a URL path of /foo/bar?
   * ![image](https://github.com/soph1e-mart1n/startup/assets/112999477/2f1313a8-0aa3-4a7a-b192-d3a35529ad07)
   * ![image](https://github.com/soph1e-mart1n/startup/assets/112999477/8260113d-4ad6-4a49-82c3-cb16d5ca8893)
   * ![image](https://github.com/soph1e-mart1n/startup/assets/112999477/33dfb19f-709b-449d-b122-c3e45a648716)
@@ -68,41 +71,66 @@ Within those ranges here are some of the more common codes. See the [MDN documen
     Manipulating HTTP requests with JSON body content
     Generating HTTP responses
     Using middleware to add functionality
-* Given the following Express service code: What does the following JavaScript fetch return?
-* Given the following MongoDB query
+* ### Given the following Express service code: What does the following JavaScript fetch return?
+* ### Given the following MongoDB query
   ![image](https://github.com/soph1e-mart1n/startup/assets/112999477/04eb7c80-840b-44a0-adfc-d1b7bd05dcb5)
   select all of the matching documents.
   * ![image](https://github.com/soph1e-mart1n/startup/assets/112999477/46ab8a26-6584-4e56-8a93-27d98ce6faca)
   * ![image](https://github.com/soph1e-mart1n/startup/assets/112999477/66a23562-9118-479f-b70d-46db4eeee721)
-
-
-* How should you store user passwords in a database?
-* Assuming the following Node.js service code is executing with websockets, what will be logged to the console of the web browser?
-* What is the WebSocket protocol used for?
-* What is JSX and how are the curly braces rendered?
-* Assuming a HTML document with a
+* ### How should you store user passwords in a database?
+  * ![image](https://github.com/soph1e-mart1n/startup/assets/112999477/e4c4a3ee-85dc-4240-bb4e-710b91adff78)
+* ### Assuming the following Node.js service code is executing with websockets, what will be logged to the console of the web browser?
+  * ![image](https://github.com/soph1e-mart1n/startup/assets/112999477/17ed8a1e-c888-4f33-adf3-521c9abbc33c)
+  * ![image](https://github.com/soph1e-mart1n/startup/assets/112999477/cddf5fbd-c478-43d3-83d7-2f733178e514)
+* ### What is the WebSocket protocol used for?
+  * Finally, in 2011 the communication protocol WebSocket was created to solve this problem. The core feature of WebSocket is that it is fully duplexed. This means that after the initial connection is made from a client, using vanilla HTTP, and then upgraded by the server to a WebSocket connection, the relationship changes to a peer-to-peer connection where either party can efficiently send data at any time.
+  * WebSocket connections are still only between two parties. So if you want to facilitate a conversation between a group of users, the server must act as the intermediary. Each peer first connects to the server, and then the server forwards messages amongst the peers.
+* ### What is JSX and how are the curly braces rendered?
+  * Combining JavaScript and HTML
+  * React combines JavaScript and HTML into its component format. CSS must be declared outside of the JSX file. The component itself highly leverages the functionality of JavaScript and can be represented as a function or class.
+  * ![image](https://github.com/soph1e-mart1n/startup/assets/112999477/36588b9f-abfb-4f97-9b87-a2cf71a22631)
+  * ![image](https://github.com/soph1e-mart1n/startup/assets/112999477/77d65e5e-0ce2-4e32-977d-d80ff27e1208)
+  * ![image](https://github.com/soph1e-mart1n/startup/assets/112999477/b02f747f-4bb1-4637-8f9e-f36a750fefdd)
+* ### Assuming a HTML document with a
   ![image](https://github.com/soph1e-mart1n/startup/assets/112999477/416c8fa7-3f62-46c2-8e8a-d663f6df5f6e)
   element, what content will the following React component generate?
   ![image](https://github.com/soph1e-mart1n/startup/assets/112999477/a9934bef-0be4-4513-9e82-7a04eedbc9b5)
-* Assuming a HTML document with a
+  * ![image](https://github.com/soph1e-mart1n/startup/assets/112999477/ea77353d-e64b-46c0-99be-de8c88256c56)
+* ### Assuming a HTML document with a
   ![image](https://github.com/soph1e-mart1n/startup/assets/112999477/20fbe2d2-15db-4869-a0bd-2bfdfe88864b)
   element, what content will the following React component generate?
     ![image](https://github.com/soph1e-mart1n/startup/assets/112999477/ed8f389e-600c-42f0-a235-fe9120c4ed4f)
-* What does the following React component do?
+  * ![image](https://github.com/soph1e-mart1n/startup/assets/112999477/04292a08-6411-4ddd-843a-05f7bb6dd704)
+* ### What does the following React component do?
   ![image](https://github.com/soph1e-mart1n/startup/assets/112999477/bbab8638-97a1-4aa9-8c75-eaa88f25edc0)
-* What are React Hooks used for?
-* What is the useEffect hook used for?
-* What does this code do?
+  * ![image](https://github.com/soph1e-mart1n/startup/assets/112999477/8e24a60e-5e34-4c5a-b11f-f6738cea6898)
+* ### What are React Hooks used for?
+  * ![image](https://github.com/soph1e-mart1n/startup/assets/112999477/3866c31f-2a79-4dcf-a774-d3cf93684fb0)
+* ### What is the useEffect hook used for?
+  * ![image](https://github.com/soph1e-mart1n/startup/assets/112999477/30c1b270-4645-40c2-bcea-36952c192b58)
+  * ![image](https://github.com/soph1e-mart1n/startup/assets/112999477/570b3b61-6d4a-4477-aa1c-51209916fde7)
+* ### What does this code do?
   ![image](https://github.com/soph1e-mart1n/startup/assets/112999477/a897d0c7-7e3f-46ed-85e7-4ce984028f14)
-* What role does npm play in web development?
-* What does package.json do in a npm project?
+  * ![image](https://github.com/soph1e-mart1n/startup/assets/112999477/0c0d905a-08dd-4c1a-8e8d-e1522db36665)
+  * A web framework router provides essential functionality for single-page applications. With a multiple-webpage application the headers, footers, navigation, and common components must be either duplicated in each HTML page, or injected before the server sends the page to the browser. With a single page application, the browser only loads one HTML page and then JavaScript is used to manipulate the DOM and give it the appearance of multiple pages. The router defines the routes a user can take through the application, and automatically manipulates the DOM to display the appropriate framework components.
+  * React does not have a standard router package, and there are many that you can choose from. We will use react-router-dom Version 6. The simplified routing functionality of React-router-dom derives from the project react-router for its core functionality. Do not confuse the two, or versions of react-router-dom before version 6, when reading tutorials and documentation.
+* ### What role does npm play in web development?
+  * Node package manager (npm) is a package manager and a software register but it's also a place where developers can find, build and manage code packages. Right now, npm contains over 800,000 packages for various applications, from front-end and robotics to mobile apps.
+  * ![image](https://github.com/soph1e-mart1n/startup/assets/112999477/7143b7ef-8dce-4718-968e-6ba8d02bc489)
+  * ![image](https://github.com/soph1e-mart1n/startup/assets/112999477/f1ca39ae-5f7f-4a02-9e3a-623c8fd5acd1)
+* ### What does package.json do in a npm project?
   * JSON provides a simple, and yet effective way, to share and store data. By design JSON is easily convertible to, and from, JavaScript objects. This make it a very convenient data format when working with web technologies. Because of its simplicity, standardization, and compatibility with JavaScript, JSON has become one of the world's most popular data formats.
   * If you list the files in the directory you will notice that it has created a file named package.json. This file contains three main things: 1) Metadata about your project such as its name and the default entry JavaScript file, 2) commands (scripts) that you can execute to do things like run, test, or distribute your code, and 3) packages that this project depends upon. The following shows what your package.json looks like currently. It has some default metadata and a simple placeholder script that just runs the echo command when you execute npm run test from the console.
-* What does the fetch function do?
-* What does node.js do?
+* ### What does the fetch function do?
+  * ![image](https://github.com/soph1e-mart1n/startup/assets/112999477/3222751c-be14-4550-995d-160149bac0ce)
+  * ![image](https://github.com/soph1e-mart1n/startup/assets/112999477/e486477d-7270-4fde-88ed-8ba773928594)
+  * ![image](https://github.com/soph1e-mart1n/startup/assets/112999477/f12ce640-3b7a-407c-96c4-d66631941e46)
+* ### What does node.js do?
   * It was the first successful application for deploying JavaScript outside of a browser.
   * Node.js simply took the V8 engine and ran it inside of a console application. When you run a JavaScript program in Chrome or Node.js, it is V8 that reads your code and executes it. With either program wrapping V8, the result is the same.
-* What does Vite do?
+* ### What does Vite do?
+  * ![image](https://github.com/soph1e-mart1n/startup/assets/112999477/dc6d5ef2-7548-448c-8f7f-5f4b7374fb12)
+  * ![image](https://github.com/soph1e-mart1n/startup/assets/112999477/1d2e0d9e-bee5-470c-a126-4013358538b8)
 
 
 # **Midterm study guide**
